@@ -92,7 +92,6 @@ class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen>
         onLoginFailed: (authException) {
           showSnackBar('Something went wrong!');
           log(VerifyPhoneNumberScreen.id, error: authException.message);
-          // handle error further if needed
         },
         builder: (context, controller) {
           return Scaffold(
@@ -124,10 +123,10 @@ class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen>
                     padding: const EdgeInsets.all(20),
                     controller: scrollController,
                     children: [
-                      Text(
-                        "We've sent an SMS with a verification code to ${widget.phoneNumber}",
-                        style: const TextStyle(fontSize: 25),
-                      ),
+                      // Text(
+                      //   "We've sent an SMS with a verification code to ${widget.phoneNumber}",
+                      //   style: const TextStyle(fontSize: 25),
+                      // ),
                       const SizedBox(height: 10),
                       const Divider(),
                       if (controller.timerIsActive)

@@ -62,7 +62,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                 onTap: () async {
                   if (isNullOrBlank(phoneNumber) ||
                       !_formKey.currentState!.validate()) {
-                    showSnackBar('Please enter a valid phone number!');
+                    showSnackBar('Please enter phone number!');
                   } else {
                     Navigator.pushNamed(
                       context,

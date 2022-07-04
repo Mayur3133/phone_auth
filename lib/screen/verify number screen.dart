@@ -47,7 +47,6 @@ class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen>
     isKeyboardVisible = bottomViewInsets > 0;
   }
 
-  // scroll to bottom of screen, when pin input field is in focus.
   Future<void> _scrollToBottomOnKeyboardOpen() async {
     while (!isKeyboardVisible) {
       await Future.delayed(const Duration(milliseconds: 50));
@@ -91,7 +90,6 @@ class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen>
         onLoginFailed: (authException) {
           showSnackBar('Something went wrong!');
           log(VerifyPhoneNumberScreen.id, error: authException.message);
-          // handle error further if needed
         },
         builder: (context, controller) {
           return Scaffold(
@@ -166,7 +164,6 @@ class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen>
                           final isValidOTP = await controller.verifyOTP(
                             otp: enteredOTP,
                           );
-                          // Incorrect OTP
                           if (!isValidOTP) {
                             showSnackBar('The entered OTP is invalid!');
                           }

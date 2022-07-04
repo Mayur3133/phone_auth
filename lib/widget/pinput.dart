@@ -14,7 +14,6 @@ class PinInputField extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
   _PinInputFieldState createState() => _PinInputFieldState();
 }
 
@@ -24,10 +23,8 @@ class _PinInputFieldState extends State<PinInputField> {
   late final int _length;
 
   Size _findContainerSize(BuildContext context) {
-    // full screen width
     double width = MediaQuery.of(context).size.width * 0.85;
 
-    // using left-over space to get width of each container
     width /= _length;
 
     return Size.square(width);
